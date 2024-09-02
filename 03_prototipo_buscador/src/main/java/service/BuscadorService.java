@@ -33,4 +33,9 @@ public class BuscadorService {
 	public void alta(Resultado resultado) {
 		resultados.add(resultado);
 	}
+	
+	public List<Resultado> eliminar(String url){
+		resultados.removeIf(r->r.getUrl().equals(url));
+		return resultados;
+	}
 }

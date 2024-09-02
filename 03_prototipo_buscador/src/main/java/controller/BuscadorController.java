@@ -3,6 +3,8 @@ package controller;
 import java.util.List;
 
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -26,5 +28,12 @@ public class BuscadorController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void alta(Resultado resultado) {
 		buscadorService.alta(resultado);
+	}
+	
+	@DELETE
+	@Path("/eliminar")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Resultado> eliminar(@FormParam ("url") String url){
+		return buscadorService.eliminar(url);
 	}
 }
