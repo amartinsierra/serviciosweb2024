@@ -3,10 +3,15 @@ package service;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.ws.rs.client.Client;
 import model.Curso;
 
 public class CursosService {
-	private static List<Curso> cursos=new ArrayList<>();
+	private static List<Curso> cursos=new ArrayList<>(List.of(new Curso("Java 21","Programación",100,200),
+			new Curso("Inglés","Idiomas",200,340),
+			new Curso("Francés","Idiomas",150,320),
+			new Curso("Python","Programación",60,110)
+			));
 	public boolean alta(Curso curso) {
 		if(buscarCurso(curso.getNombre())==null) {
 			cursos.add(curso);
@@ -16,6 +21,7 @@ public class CursosService {
 		
 	}
 	public void eliminar(String nombre) {
+
 		cursos.removeIf(c->c.getNombre().equals(nombre));
 	}
 	public void modificarDatos(Curso curso) {

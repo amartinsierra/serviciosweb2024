@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>06_cliente_buscador</groupId>
+  <artifactId>06_cliente_buscador</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>21</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client -->
+	<dependency>
+	    <groupId>org.glassfish.jersey.core</groupId>
+	    <artifactId>jersey-client</artifactId>
+	    <version>3.1.7</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.glassfish.jersey.inject</groupId>
+	    <artifactId>jersey-hk2</artifactId>
+	    <version>3.1.7</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.glassfish.jersey.media</groupId>
+	    <artifactId>jersey-media-json-jackson</artifactId>
+	    <version>3.1.7</version>
+	</dependency>
+  </dependencies>
+</project>
