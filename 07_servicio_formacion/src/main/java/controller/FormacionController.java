@@ -11,6 +11,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import model.Formacion;
 import service.FormacionService;
+
 @Path("/formacion")
 public class FormacionController {
 	FormacionService formacionService=new FormacionService();
