@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+	<center>
+		Introduce área: <input type="text" id="area"><br><br>
+		<input type="button" id="btnBuscar">
+		<br><br>
+		<div id="resultado">
+		
+		</div>
+	
+	</center>
+	<script type="text/javascript">
+		$("#btnBuscar").click(function(){
+			let url="http://localhost:8500/formacion/consulta/"+$("#area").val();
+			$.get(url,function(data,status){
+				var tabla="<table border='1'><tr><th>Nombre</th><th>Área</th><th>Duracion</th><th>Precio</th></tr>"; 
+				$.each(data, function(i, e) {
+					//tabla+="<tr><td>"+e.nombre+"</td><td>"+e.tematica+"</td><td>"+e.duracion+"</td><td>"+e.precio+"</td></tr>";
+					tabla+=`<tr><td>
+								${e.nombre}
+								</td><td>
+								${e.area}
+								</td><td>
+								${e.duracion}
+								</td><td>
+								${e.precio}
+								</td></tr>`;
+				});
+				tabla+="</table>";
+				
+				$("#resultado").html(tabla); 
+			});
+			
+		});
+	
+	</script>
+</body>
+</html>
