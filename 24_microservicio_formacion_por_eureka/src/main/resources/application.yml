@@ -1,0 +1,12 @@
+server:
+  port: 8500
+  servlet:
+    context-path: /formacion
+spring:
+  application:
+    name: servicio-formacion
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka 

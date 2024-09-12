@@ -1,0 +1,11 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /cursos
+spring:
+  application:
+    name: servicio-cursos
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
