@@ -11,7 +11,7 @@ import model.Pais;
 @Service
 public class PaisesServiceImpl implements PaisesService {
 
-	String url="https://restcountries.com/v2/allt";
+	String url="https://restcountries.com/v2/all";
 	
 	RestClient restClient;
 	
@@ -32,6 +32,7 @@ public class PaisesServiceImpl implements PaisesService {
 					.toList();
 		}
 		catch(HttpClientErrorException ex) {
+			ex.printStackTrace();
 			throw new RuntimeException();
 		}
 	}
@@ -48,6 +49,7 @@ public class PaisesServiceImpl implements PaisesService {
 					.toList();
 		}
 		catch(HttpClientErrorException ex) {
+			ex.printStackTrace();
 			throw new RuntimeException();
 		}
 	}
